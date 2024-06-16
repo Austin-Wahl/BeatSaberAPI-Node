@@ -32,3 +32,7 @@ res.then(function resolved(data) {
 ```
 
 # Documentation
+You can build the documentation yourself by running the following command or visit 
+```bash
+npm run docs
+``` 

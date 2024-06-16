@@ -1,5 +1,5 @@
 test.js
 package-lock.json
-/docs/
 /node_modules/
 jsdoc.json
+.npmignore

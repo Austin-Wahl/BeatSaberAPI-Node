@@ -6,7 +6,7 @@
     "marked": "^13.0.0",
     "typescript": "^5.4.5"
   },
-  "name": "BeatSaberAPI-Node",
+  "name": "beatsaberapi-node",
   "version": "1.0.0",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
