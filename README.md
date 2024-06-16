@@ -8,3 +8,27 @@ Currently in development. BeatSaberAPI-Node is a Open Source Library that allows
 - BeatLeader
 - AccSaber
 - Challenge Saber
+
+# Installing
+Run the following command
+```bash
+npm install beatsaberapi-node
+```
+After installing, besure to install dependencies
+```bash
+npm install
+```
+
+# Implementing in your code
+```js
+const BeatSaberNode = require('beatsaberapi-node');
+
+// example function call
+let res = BeatSaberWebWrapper.ScoreSaber.Ranking.Public.getRequestInfoByLeaderboardId('578412')
+
+res.then(function resolved(data) {
+    console.log(data)
+})
+```
+
+# Documentation

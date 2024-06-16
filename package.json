@@ -6,7 +6,7 @@
     "marked": "^13.0.0",
     "typescript": "^5.4.5"
   },
-  "name": "scoresaber-npm-wrapper",
+  "name": "BeatSaberAPI-Node",
   "version": "1.0.0",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -14,7 +14,8 @@
     "build": "tsc ./src/index.d.ts",
     "docs": "jsdoc --configure jsdoc.json --verbose"
   },
-  "author": "",
+  "author": "Austin Wahl",
   "license": "ISC",
-  "description": ""
+  "description": "BeatSaberAPI-Node is a Open Source Library that allows for easy interaction with different BeatSaber API's through a well documented Node.JS library.",
+  "keywords": ["BeatSaber", "Beat Saber", "API", "BeatSaber Node", "Node", "ScoreSaber"]
 }
