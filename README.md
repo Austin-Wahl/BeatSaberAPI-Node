@@ -32,7 +32,7 @@ res.then(function resolved(data) {
 ```
 
 # Documentation
-You can build the documentation yourself by running the following command or visit the [docs](https://austin-wahl.github.io/)
+You can build the documentation yourself by running the following command or visit the [docs](https://austin-wahl.github.io/BeatSaberAPI-Node/)
 ```bash
 npm run docs
 ``` 
