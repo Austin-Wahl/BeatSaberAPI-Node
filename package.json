@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "clean-jsdoc-theme": "^4.3.0",
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.3",
+    "marked": "^13.0.0",
+    "typescript": "^5.4.5"
+  },
+  "name": "scoresaber-npm-wrapper",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "build": "tsc ./src/index.d.ts",
+    "docs": "jsdoc --configure jsdoc.json --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
