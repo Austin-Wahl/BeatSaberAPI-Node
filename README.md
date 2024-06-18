@@ -36,5 +36,3 @@ You can build the documentation yourself by running the following command or vis
 ```bash
 npm run docs
 ``` 
-
-In dev
