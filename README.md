@@ -24,7 +24,7 @@ npm install
 const BeatSaberNode = require('beatsaberapi-node');
 
 // example function call
-let res = BeatSaberWebWrapper.ScoreSaber.Ranking.Public.getRequestInfoByLeaderboardId('578412')
+let res = BeatSaberNode.ScoreSaber.Ranking.Public.getRequestInfoByLeaderboardId('578412')
 
 res.then(function resolved(data) {
     console.log(data)
