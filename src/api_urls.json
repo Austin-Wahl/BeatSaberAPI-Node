@@ -1,5 +1,6 @@
 {
     "urls": {
-        "scoresaber": "https://scoresaber.com/api/"
+        "scoresaber": "https://scoresaber.com/api/",
+        "beatleader": "https://api.beatleader.xyz/"
     }
 }

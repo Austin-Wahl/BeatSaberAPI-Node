@@ -44,7 +44,7 @@ interface PlayerScore {
 }
 
 export interface ScoreSaberLeaderboardSearchOptions {
-    verified?: boolean,
+    verified?: boolean
     ranked?: boolean,
     qualified?: boolean,
     loved?: boolean,
