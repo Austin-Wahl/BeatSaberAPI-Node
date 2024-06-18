@@ -573,6 +573,8 @@ export interface LeaderboardSearchOptions {
 
 type LeaderboardSortBy = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | "date" | "pp" | "acc" | "pauses" | "rank" | "maxStreak" | "mistakes" | "weight" | "weightedPp"
 
+type RequirementsString = "none" | "chroma" | "noodles" | "mappingExtensions" | "cinema" | "v3" | "optionalProperties" | "ignore"
+
 export interface LegacyModifiers {
     da: number,
     fs: number,

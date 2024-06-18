@@ -48,7 +48,7 @@ export namespace BeatLeader {
     }
 
     export namespace Leaderboards {
-        function getById(id: string, leaderboardByIdSearchOptions: LeaderboardByIdSearchOption): Promise<LeaderboardResponse>
+        function getById(id: string, leaderboardByIdSearchOptions?: LeaderboardByIdSearchOption): Promise<LeaderboardResponse>
         function getClanRankingsById(id: string, page?: number, count?: number): Promise<LeaderboardClanRankingResponse>
         function get(leaderboardSearchOptions?: LeaderboardSearchOptions): Promise<LeaderboardInfoResponseResponseWithMetadata>
         function getScoregraphById(id: string): Promise<ScoreGraphEntry>

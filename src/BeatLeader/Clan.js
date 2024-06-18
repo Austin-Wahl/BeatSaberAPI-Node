@@ -1,4 +1,5 @@
 const {beatleader} = require('../api_urls.json').urls
+const {parseSearchOptions} = require('./utility/parseSearchOptions')
 
 /**
  * @namespace BeatLeader.Clans
@@ -17,7 +18,7 @@ const {beatleader} = require('../api_urls.json').urls
  * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | name, pp, acc, rank, count, captures |
  * | order     | Order       | (Optional) Sorting order            | desc, asc     |
  * | search    | string      | (Optional) Search query             |        |
- * @returns A promise with a list of clans
+ * @returns {Promise} A promise with a list of clans
  */
 async function get(searchOptions = {}) {
     try {
@@ -30,7 +31,8 @@ async function get(searchOptions = {}) {
             return Promise.reject(new Error("Invalid request parameters"))
         if(res.status == 404)
             return Promise.reject(new Error("Clans not found"))
-        
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
@@ -51,7 +53,7 @@ async function get(searchOptions = {}) {
  * | order     | Order       | (Optional) Sorting order            | desc, asc     |
  * | search    | string      | (Optional) Search query             |        |
  * @param {boolean} primary Whether to include only players for whom this clan is primary, default is false
- * @returns A promise with a clan
+ * @returns {Promise} A promise with a clan
  */
 async function getByTag(tag, searchOptions = {}, primary = false) {
     try {
@@ -64,7 +66,8 @@ async function getByTag(tag, searchOptions = {}, primary = false) {
         let res = await fetch(encodeURI(route))
         if(res.status == 404)
             return Promise.reject(new Error("Clan not found"))
-
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
@@ -84,7 +87,7 @@ async function getByTag(tag, searchOptions = {}, primary = false) {
  * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | pp, topPp, name, rank, acc, weightedAcc, top1Count, top1Score, weightedRank, topAcc, hmd, playCount, score, lastplay, maxStreak, replaysWatched, dailyImprovements, timing |
  * | order     | Order       | (Optional) Sorting order            | desc, asc     |
  * @param {boolean} primary Whether to include only players for whom this clan is primary, default is false
- * @returns A promise with a clan
+ * @returns {Promise} A promise with a clan
  */
 async function getById(id, searchOptions = {}, primary = false) {
     try {
@@ -97,7 +100,8 @@ async function getById(id, searchOptions = {}, primary = false) {
         let res = await fetch(encodeURI(route))
         if(res.status == 404)
             return Promise.reject(new Error("Clan not found"))
-
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
@@ -117,7 +121,7 @@ async function getById(id, searchOptions = {}, primary = false) {
  * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | pp, acc, rank, date, tohold, toconquer |
  * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| none, general, noMods, noPause, golf, sCPM, speedrun, speedrunBackup |
  * | order              | Order              | (Optional) Sorting order                             | desc, asc     |
- * @returns A promise with a list of ranked maps 
+ * @returns {Promise} A promise with a list of ranked maps 
  */
 async function getMapsByTag(tag, searchOptions = {}) {
     try {
@@ -129,7 +133,8 @@ async function getMapsByTag(tag, searchOptions = {}) {
         let res = await fetch(encodeURI(route))
         if(res.status == 404)
             return Promise.reject(new Error("Clan not found"))
-
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
@@ -149,7 +154,7 @@ async function getMapsByTag(tag, searchOptions = {}) {
  * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | pp, acc, rank, date, tohold, toconquer |
  * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| none, general, noMods, noPause, golf, sCPM, speedrun, speedrunBackup |
  * | order              | Order              | (Optional) Sorting order                             | desc, asc     |
- * @returns A promise with a list of ranked maps
+ * @returns {Promise} A promise with a list of ranked maps
  */
 async function getMapsById(id, searchOptions = {}) {
     try {
@@ -161,7 +166,8 @@ async function getMapsById(id, searchOptions = {}) {
         let res = await fetch(encodeURI(route))
         if(res.status == 404)
             return Promise.reject(new Error("Clan not found"))
-
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
@@ -172,7 +178,7 @@ async function getMapsById(id, searchOptions = {}) {
  * Fetches a global map showing clan captured maps and rankings.
  * @function getGlobalMap
  * @memberof BeatLeader.Clans
- * @returns A promise with the Global Map
+ * @returns {Promise} A promise with the Global Map
  */
 async function getGlobalMap() {
     try {
@@ -181,28 +187,12 @@ async function getGlobalMap() {
         let res = await fetch(encodeURI(route))
         if(res.status == 404)
             return Promise.reject(new Error("Global map not found"))
-
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
         return res.json()
     } catch (error) {
         throw new Error(error)
     }
-}
-
-// utility 
-function parseSearchOptions(searchOptions) {
-    let route = ''
-    if(Object.keys(searchOptions).length > 0) {
-        route += '?'
-        let i = 1
-        for(key in searchOptions) {
-            if(i < Object.keys(searchOptions).length)
-                route += `${key}=${searchOptions[key]}&`
-            else 
-                route += `${key}=${searchOptions[key]}`
-            i++
-        }
-    } 
-    return route
 }
 
 exports.BeatLeaderClans = {
