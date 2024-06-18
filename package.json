@@ -7,7 +7,7 @@
     "typescript": "^5.4.5"
   },
   "name": "beatsaberapi-node",
-  "version": "1.0.2",
+  "version": "0.1.3",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
@@ -17,5 +17,5 @@
   "author": "Austin Wahl",
   "license": "ISC",
   "description": "BeatSaberAPI-Node is a Open Source Library that allows for easy interaction with different BeatSaber API's through a well documented Node.JS library.",
-  "keywords": ["BeatSaber", "Beat Saber", "API", "BeatSaber Node", "Node", "ScoreSaber"]
+  "keywords": ["BeatSaber", "Beat Saber", "API", "BeatSaber Node", "Node", "ScoreSaber", "BeatLeader"]
 }

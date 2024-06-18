@@ -2,6 +2,7 @@ const {beatleader} = require('../api_urls.json').urls
 const {parseSearchOptions} = require('./utility/parseSearchOptions')
 
 /**
+ * Interact with the BeatLeader Leaderboard API endpoints
  * @namespace BeatLeader.Leaderboards
  * @memberof BeatLeader
  */
