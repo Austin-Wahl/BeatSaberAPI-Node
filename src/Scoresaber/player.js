@@ -88,7 +88,7 @@ async function fullInfoById(playerId) {
  * @memberof ScoreSaber.Players
  * @param {string} playerId Player ID
  * @param {number} limit Maximum number of results to be returned
- * @param {string} sort The sort order. Valid values are "top" and "recent".
+ * @param {string} sort The sort order. Valid values are `"top"` and `"recent"`.
  * @returns {Promise<Array>} Returns a Promise with full info on a player
  */
 async function scoresById(playerId, limit = 1, sort = 'top', page = 1, withMetadata = true) {

@@ -9,14 +9,28 @@ const {beatleader} = require('../api_urls.json').urls
 /**
  * Get profile data for a specific user based on their ID
  * @function get
+ * @memberof BeatLeader.Players.Player
  * @param {string} id ID of user to get data for
  * @param {boolean} stats Include stats in the response. Default is true
  * @param {boolean} keepOriginalId Whether to keep original ID (for migrated players). Default is false
- * @param {string} leaderboardContext. Leaderboard context, 'general' by default. Available values : `none`, `general`, `noMods`, `noPause`, `golf`, `sCPM`, `speedrun`, `speedrunBackup`
+ * @param {string} leaderboardContext. Leaderboard context, 'general' by default. Available values : `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"`
  * @returns {Promise} Returns a promise with profile data on a specific user
  */
 async function get(id, stats = true, keepOriginalId = false, leaderboardContext = "general") {
+    try {
+        let route = new URL(beatleader + 'player/' + id).href
+        route += `?stats=${stats}&keepOriginalId=${keepOriginalId}&leaderboardContext=${leaderboardContext}`
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -27,7 +41,19 @@ async function get(id, stats = true, keepOriginalId = false, leaderboardContext 
  * @returns {Promise} Returns a promise with profile data on a specific user
  */
 async function getByDiscordId(discordId) {
+    try {
+        let route = new URL(beatleader + 'player/discord/' + discordId).href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -38,7 +64,19 @@ async function getByDiscordId(discordId) {
  * @returns {Promise} Returns a promise with profile data on a specific user
  */
 async function getByBeatSaverId(beatsaverId) {
+    try {
+        let route = new URL(beatleader + 'player/beatsaver/' + beatsaverId).href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -49,7 +87,19 @@ async function getByBeatSaverId(beatsaverId) {
  * @returns {Promise} Returns a promise with profile data on a specific user
  */
 async function getByPatreonId(patreonId) {
+    try {
+        let route = new URL(beatleader + 'player/patreon/' + beatsaverId).href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -60,7 +110,19 @@ async function getByPatreonId(patreonId) {
  * @returns {Promise} Returns a promise with a list of events a user has participated in
  */
 async function getParticipatedEventsById(id) {
+    try {
+        let route = new URL(beatleader + 'player/' + id  + '/eventsparticipating').href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -71,7 +133,19 @@ async function getParticipatedEventsById(id) {
  * @returns {Promise} Returns a promise with follower data
  */
 async function getFollowerInfoById(id) {
+    try {
+        let route = new URL(beatleader + 'player/' + id  + '/followersInfo').href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -81,11 +155,24 @@ async function getFollowerInfoById(id) {
  * @param {string} id ID of user to get data for
  * @param {number} page Page to get data from. Default is 1
  * @param {number} count Number of players to return. Default is 10
- * @param {string} relationship Relationship type: followers or following Available values : `followers`, `following`
+ * @param {string} type Relationship type: followers or following Available values : `"followers"`, `"following"`
  * @returns {Promise} Returns a promise with followers
  */
-async function getFollowersById(id, page = 1, count = 10) {
+async function getFollowersById(id, page = 1, count = 10, type = "general") {
+    try {
+        let route = new URL(beatleader + 'player/' + id  + '/followers').href
+        route += `?page=${page}&count=${count}&type=${type}`
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -96,7 +183,19 @@ async function getFollowersById(id, page = 1, count = 10) {
  * @returns {Promise} Returns a promise with info on a specific clan
  */
 async function getFoundedClanById(id) {
+    try {
+        let route = new URL(beatleader + 'player/' + id  + '/foundedClan').href
 
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found or player doesn't found any clans"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
+
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
 /**
@@ -107,10 +206,22 @@ async function getFoundedClanById(id) {
  * @returns {Promise} Returns a promise with ranked map data
  */
 async function getRankedMapsById(id) {
+    try {
+        let route = new URL(beatleader + 'player/' + id  + '/rankedMaps').href
+        
+        let res = await fetch(encodeURI(route))
+        if(res.status == 404)
+            return Promise.reject(new Error("Player not found"))
+        if(res.status != 200)
+            return Promise.reject(new Error("Undocumented error: " + res.status))
 
+        return res.json()
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
-exports.BeatleaderPlayer = {
+exports.BeatLeaderPlayer = {
     get: get,
     getByDiscordId: getByDiscordId,
     getByBeatSaverId: getByBeatSaverId,

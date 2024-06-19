@@ -39,6 +39,6 @@ exports.BeatLeader = {
     Players: {
         get: BeatLeaderGetAllPlayers,
         Player: BeatLeaderPlayer,
-        Scores: BeatLeaderPlayerScores,
+        Scores: BeatLeaderPlayerScores
     },
 }

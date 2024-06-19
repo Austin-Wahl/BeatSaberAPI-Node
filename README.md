@@ -3,9 +3,9 @@ Currently in development. BeatSaberAPI-Node is a Open Source Library that allows
 
 ## Supported API's
 - ScoreSaber
+- BeatLeader
 
 ## Planned Support 
-- BeatLeader
 - AccSaber
 - Challenge Saber
 
