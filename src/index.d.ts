@@ -7,7 +7,7 @@ import { ClanTagSearchOptions, ClanGlobalMap, ClanRankingResponseClanResponseFul
 import { LeaderboardByIdSearchOption, LeaderboardClanRankingResponse, LeaderboardContexts, LeaderboardInfoResponseResponseWithMetadata, LeaderboardResponse, LeaderboardSearchOptions, ScoreResponseWithMyScoreResponseWithMetadata } from './BeatLeader/types/BeatLeader';
 import { LegacyModifiers } from './BeatLeader/types/BeatLeader';
 import { ParticipatingEventResponse, PlayerFollowersInfoResponse, PlayerResponseWithStatsResponseWithMetadata, RankedMapperResponse, ScoreGraphEntry, PlayerResponseFull, ClanBiggerResponse } from './BeatLeader/types/BeatLeader'
-import { ScoresSearchOptions, CompactScoreResponseResponseWithMetadata, Difficulties, AccGraphOptions, HistoryCompactResponse, ScoreResponseWithMyScore } from './BeatLeader/types/BeatLeader'
+import { PlayerFollower, PlayerSearchOptions, ScoresSearchOptions, CompactScoreResponseResponseWithMetadata, Difficulties, AccGraphOptions, HistoryCompactResponse, ScoreResponseWithMyScore } from './BeatLeader/types/BeatLeader'
 
 export namespace ScoreSaber {
     export namespace Leaderboard {
@@ -68,6 +68,7 @@ export namespace BeatLeader {
             function getByPatreonId(patreonId: string): Promise<PlayerResponseFull>
             function getParticipatedEventsById(id: string): Promise<ParticipatingEventResponse>
             function getFollowerInfoById(id: string): Promise<PlayerFollowersInfoResponse>
+            function getFollowersById(id: string, page?: number, count?: number, relationship: "following" | "followers"): Promise<Array<PlayerFollower>>
             function getFoundedClanById(id: string): Promise<ClanBiggerResponse>
             function getRankedMapsById(id: string): Promise<RankedMapperResponse>
         }

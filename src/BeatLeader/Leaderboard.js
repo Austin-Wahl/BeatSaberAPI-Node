@@ -16,19 +16,19 @@ const {parseSearchOptions} = require('./utility/parseSearchOptions')
  * |---------------------|-------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------|
  * | page                | number                  | (Optional) Page number               | N/A                                                                                                 |
  * | count               | number                  | (Optional) Number of items per page  | N/A                                                                                                 |
- * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | 0, 1, 2, 3, 4, 5, 6, 7, 8, "date", "pp", "acc", "pauses", "rank", "maxStreak", "mistakes", "weight", "weightedPp" |
- * | order               | Order                   | Sorting order                        | "asc", "desc"                                                                                       |
+ * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
+ * | order               | Order                   | Sorting order                        | `"asc"`, `"desc"`                                                                                       |
  * | search              | string                  | (Optional) Search query              | N/A                                                                                                 |
  * | type                | Type                    | (Optional) Type of item              | N/A                                                                                                 |
  * | mode                | string                  | (Optional) Mode of item              | N/A                                                                                                 |
- * | difficulty          | Difficulties            | (Optional) Difficulty level          | "Standard", "OneSaber", "90Degree", "360Degree"                                                     |
- * | mapType             | MapsType                | (Optional) Map type                  | 0, 1, 2, "ranked", "unranked", "all"                                                                |
- * | allTypes            | Operation               | (Optional) Operation for all types   | 0, 1, 2, "any", "all", "not"                                                                        |
- * | mapRequirements     | RequirementsString      | (Optional) Map requirements          | "none", "chroma", "noodles", "mappingExtensions", "cinema", "v3", "optionalProperties", "ignore"    |
- * | allRequirements     | Operation               | (Optional) Operation for all requirements | 0, 1, 2, "any", "all", "not"                                                                    |
- * | songStatus          | SongStatus              | (Optional) Status of the song        | 0, 2, 4, 8, 16, 32, "none", "curated", "mapOfTheWeek", "noodleMonday", "featuredOnCC", "beastSaberAwarded" |
- * | leaderboardContext  | LeaderboardContexts     | (Optional) Context of the leaderboard | 0, 2, 4, 8, 16, 32, 64, 128, "none", "general", "noMods", "noPause", "golf", "sCPM", "speedrun", "speedrunBackup" |
- * | mytype              | MyType                  | (Optional) Custom type               | 0, 1, 2, 3, 4, 5, 6, "none", "played", "unplayed", "myNominated", "othersNominated", "myMaps"      |
+ * | difficulty          | Difficulties            | (Optional) Difficulty level          |`"Standard"`, `"OneSaber"`, `"90Degree"`, `"360Degree"`                                              |
+ * | mapType             | MapsType                | (Optional) Map type                  | `0`, `1`, `2`, `"ranked"`, `"unranked"`, `"all"`                                                                |
+ * | allTypes            | Operation               | (Optional) Operation for all types   | `0`, `1`, `2`, `"any"`, `"all"`, `"not"`                                                                        |
+ * | mapRequirements     | RequirementsString      | (Optional) Map requirements          | `"none"`, `"chroma"`, `"noodles"`, `"mappingExtensions"`, `"cinema"`, `"v3"`, `"optionalProperties"`, `"ignore"`    |
+ * | allRequirements     | Operation               | (Optional) Operation for all requirements | `0`, `1`, `2`, `"any"`, `"all"`, `"not"`                                                                    |
+ * | songStatus          | SongStatus              | (Optional) Status of the song        | `0`, `2`, `4`, `8`, `16`, `32`, `"none"`, `"curated"`, `"mapOfTheWeek"`, `"noodleMonday"`, `"featuredOnCC"`, `"beastSaberAwarded"` |
+ * | leaderboardContext  | LeaderboardContexts     | (Optional) Context of the leaderboard | `0`, `2`, `4`, `8`, `16`, `32`, `64`, `128`, `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"` |
+ * | mytype              | MyType                  | (Optional) Custom type               | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `"none"`, `"played"`, `"unplayed"`, `"myNominated"`, `"othersNominated"`, `"myMaps"`      |
  * | stars_from          | number                  | (Optional) Minimum stars             | N/A                                                                                                 |
  * | stars_to            | number                  | (Optional) Maximum stars             | N/A                                                                                                 |
  * | accrating_from      | number                  | (Optional) Minimum accuracy rating   | N/A                                                                                                 |
@@ -69,10 +69,10 @@ async function get(leaderboardSearchOptions = {}) {
  * |---------------------|-------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------|
  * | page                | number                  | (Optional) Page number               | N/A                                                                                                 |
  * | count               | number                  | (Optional) Number of items per page  | N/A                                                                                                 |
- * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | 0, 1, 2, 3, 4, 5, 6, 7, 8, "date", "pp", "acc", "pauses", "rank", "maxStreak", "mistakes", "weight", "weightedPp" |
- * | order               | Order                   | Sorting order                        | "asc", "desc"                                                                                       |
- * | scoreStatus         | ScoreFilterStatus       | (Optional) Score status filter       | 0, 1, "none", "suspicious"                                                                                                 |
- * | leaderboardContext  | LeaderboardContexts     | (Optional) Context of the leaderboard | 0, 2, 4, 8, 16, 32, 64, 128, "none", "general", "noMods", "noPause", "golf", "sCPM", "speedrun", "speedrunBackup" |
+ * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
+ * | order               | Order                   | Sorting order                        | `"asc"`, `"desc"`                                                                                       |
+ * | scoreStatus         | ScoreFilterStatus       | (Optional) Score status filter       | `0`, `1`, `"none"`, `"suspicious"`                                                                                                 |
+ * | leaderboardContext  | LeaderboardContexts     | (Optional) Context of the leaderboard | `0`, `2`, `4`, `8`, `16`, `32`, `64`, `128`, `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"` |
  * | countries           | Array<string>           | (Optional) List of country codes     | N/A                                                                                                 |
  * | search              | string                  | (Optional) Search query              | N/A                                                                                                 |
  * | modifiers           | string                  | (Optional) Modifiers                 | N/A                                                                                                 |

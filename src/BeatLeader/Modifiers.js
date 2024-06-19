@@ -15,7 +15,7 @@ const {beatleader} = require('../api_urls.json').urls
 async function get() {
     try {
         let route = new URL(beatleader + 'modifiers').href
-        let res = await fetch(route)
+        let res = await fetch(encodeURI(route))
 
         if(res.status != 200)
             return Promise.reject(new Error("Undocumented error: " + res.status))

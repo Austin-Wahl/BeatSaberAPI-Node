@@ -16,8 +16,8 @@ const {parseSearchOptions} = require('./utility/parseSearchOptions')
  * |-----------|-------------|-----------------------              |---------------|
  * | page      | number      | (Optional) Page number.             |        |
  * | count     | number      | (Optional) Number of items per page |        |
- * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | name, pp, acc, rank, count, captures |
- * | order     | Order       | (Optional) Sorting order            | desc, asc     |
+ * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | `"name"`, `"pp"`, `"acc"`, `"rank"`, `"count"`, `"captures"` |
+ * | order     | Order       | (Optional) Sorting order            | `"desc"`, `"asc"`     |
  * | search    | string      | (Optional) Search query             |        |
  * @returns {Promise} A promise with a list of clans
  */
@@ -50,8 +50,8 @@ async function get(searchOptions = {}) {
  * |-----------|-------------|-------------------------------------|---------------|
  * | page      | number      | (Optional) Page number              |        |
  * | count     | number      | (Optional) Number of items per page |        |
- * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | pp, topPp, name, rank, acc, weightedAcc, top1Count, top1Score, weightedRank, topAcc, hmd, playCount, score, lastplay, maxStreak, replaysWatched, dailyImprovements, timing |
- * | order     | Order       | (Optional) Sorting order            | desc, asc     |
+ * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | `"pp"`, `"topPp"`, `"name"`, `"rank"`, `"acc"`, `"weightedAcc"`, `"top1Count"`, `"top1Score"`, `"weightedRank"`, `"topAcc"`, `"hmd"`, `"playCount"`, `"score"`, `"lastplay"`, `"maxStreak"`, `"replaysWatched"`, `"dailyImprovements"`, `"timing"` |
+ * | order     | Order       | (Optional) Sorting order            | `"desc"`, `"asc"`     |
  * | search    | string      | (Optional) Search query             |        |
  * @param {boolean} primary Whether to include only players for whom this clan is primary, default is false
  * @returns {Promise} A promise with a clan
@@ -85,8 +85,8 @@ async function getByTag(tag, searchOptions = {}, primary = false) {
  * |-----------|-------------|-------------------------------------|---------------|
  * | page      | number      | (Optional) Page number              |        |
  * | count     | number      | (Optional) Number of items per page |        |
- * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | pp, topPp, name, rank, acc, weightedAcc, top1Count, top1Score, weightedRank, topAcc, hmd, playCount, score, lastplay, maxStreak, replaysWatched, dailyImprovements, timing |
- * | order     | Order       | (Optional) Sorting order            | desc, asc     |
+ * | sortBy    | ClanSortBy  | (Optional) Sorting criteria         | `"pp"`, `"topPp"`, `"name"`, `"rank"`, `"acc"`, `"weightedAcc"`, `"top1Count"`, `"top1Score"`, `"weightedRank"`, `"topAcc"`, `"hmd"`, `"playCount"`, `"score"`, `"lastplay"`, `"maxStreak"`, `"replaysWatched"`, `"dailyImprovements"`, `"timing"` |
+ * | order     | Order       | (Optional) Sorting order            | `"desc"`, `"asc"`     |
  * @param {boolean} primary Whether to include only players for whom this clan is primary, default is false
  * @returns {Promise} A promise with a clan
  */
@@ -119,9 +119,9 @@ async function getById(id, searchOptions = {}, primary = false) {
  * |--------------------|--------------------|-------------------------------------                 |---------------|
  * | page               | number             | (Optional) Page number                               |        |
  * | count              | number             | (Optional) Number of items per page                  |        |
- * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | pp, acc, rank, date, tohold, toconquer |
- * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| none, general, noMods, noPause, golf, sCPM, speedrun, speedrunBackup |
- * | order              | Order              | (Optional) Sorting order                             | desc, asc     |
+ * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | `"pp"`, `"topPp"`, `"name"`, `"rank"`, `"acc"`, `"weightedAcc"`, `"top1Count"`, `"top1Score"`, `"weightedRank"`, `"topAcc"`, `"hmd"`, `"playCount"`, `"score"`, `"lastplay"`, `"maxStreak"`, `"replaysWatched"`, `"dailyImprovements"`, `"timing"` |
+ * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"` |
+ * | order              | Order              | (Optional) Sorting order                             | `"desc"`, `"asc"`     |
  * @returns {Promise} A promise with a list of ranked maps 
  */
 async function getMapsByTag(tag, searchOptions = {}) {
@@ -152,9 +152,9 @@ async function getMapsByTag(tag, searchOptions = {}) {
  * |--------------------|--------------------|-------------------------------------                 |---------------|
  * | page               | number             | (Optional) Page number                               |        |
  * | count              | number             | (Optional) Number of items per page                  |        |
- * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | pp, acc, rank, date, tohold, toconquer |
- * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| none, general, noMods, noPause, golf, sCPM, speedrun, speedrunBackup |
- * | order              | Order              | (Optional) Sorting order                             | desc, asc     |
+ * | sortBy             | ClanSortBy         | (Optional) Sorting criteria                          | `"pp"`, `"topPp"`, `"name"`, `"rank"`, `"acc"`, `"weightedAcc"`, `"top1Count"`, `"top1Score"`, `"weightedRank"`, `"topAcc"`, `"hmd"`, `"playCount"`, `"score"`, `"lastplay"`, `"maxStreak"`, `"replaysWatched"`, `"dailyImprovements"`, `"timing"` |
+ * | leaderboardContext | LeaderboardContext | (Optional) Context of leaderboard. Default is General| `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"` |
+ * | order              | Order              | (Optional) Sorting order                             | `"desc"`, `"asc"`     |
  * @returns {Promise} A promise with a list of ranked maps
  */
 async function getMapsById(id, searchOptions = {}) {

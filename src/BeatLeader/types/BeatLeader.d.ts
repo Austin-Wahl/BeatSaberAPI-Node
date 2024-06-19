@@ -395,7 +395,7 @@ type HMD = | 0 | 1 | 2 | 4 | 8 | 16 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40
 | "hedy" | "vaporeon" | "huaweivr" | "asusWmr" | "cloudxr" | "vridge" | "medion"
 | "picoNeo4" | "questPro" | "pimaxCrystal" | "e4" | "index" | "controllable"
 | "bigscreenbeyond" | "nolosonic" | "hypereal" | "varjoaero" | "viveCosmos" | "quest2"
-| "quest3"; ;
+| "quest3"
 
 interface HistoryCompactResponse {
     timestamp: number,
