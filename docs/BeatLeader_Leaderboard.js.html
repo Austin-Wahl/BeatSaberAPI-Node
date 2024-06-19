@@ -19,7 +19,7 @@ const {parseSearchOptions} = require('./utility/parseSearchOptions')
  * | page                | number                  | (Optional) Page number               | N/A                                                                                                 |
  * | count               | number                  | (Optional) Number of items per page  | N/A                                                                                                 |
  * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
- * | order               | Order                   | Sorting order                        | `"asc"`, `"desc"`                                                                                       |
+ * | order               | Order                   | (Optional)Sorting order                        | `"asc"`, `"desc"`                                                                                       |
  * | search              | string                  | (Optional) Search query              | N/A                                                                                                 |
  * | type                | Type                    | (Optional) Type of item              | N/A                                                                                                 |
  * | mode                | string                  | (Optional) Mode of item              | N/A                                                                                                 |
@@ -72,7 +72,7 @@ async function get(leaderboardSearchOptions = {}) {
  * | page                | number                  | (Optional) Page number               | N/A                                                                                                 |
  * | count               | number                  | (Optional) Number of items per page  | N/A                                                                                                 |
  * | sortBy              | LeaderboardSortBy       | (Optional) Sorting criteria          | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
- * | order               | Order                   | Sorting order                        | `"asc"`, `"desc"`                                                                                       |
+ * | order               | Order                   | (Optional) Sorting order                        | `"asc"`, `"desc"`                                                                                       |
  * | scoreStatus         | ScoreFilterStatus       | (Optional) Score status filter       | `0`, `1`, `"none"`, `"suspicious"`                                                                                                 |
  * | leaderboardContext  | LeaderboardContexts     | (Optional) Context of the leaderboard | `0`, `2`, `4`, `8`, `16`, `32`, `64`, `128`, `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"` |
  * | countries           | Array&lt;string>           | (Optional) List of country codes     | N/A                                                                                                 |

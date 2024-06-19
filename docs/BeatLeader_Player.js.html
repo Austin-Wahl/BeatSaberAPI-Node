@@ -15,7 +15,7 @@
  * @param {string} id ID of user to get data for
  * @param {boolean} stats Include stats in the response. Default is true
  * @param {boolean} keepOriginalId Whether to keep original ID (for migrated players). Default is false
- * @param {string} leaderboardContext. Leaderboard context, 'general' by default. Available values : `none`, `general`, `noMods`, `noPause`, `golf`, `sCPM`, `speedrun`, `speedrunBackup`
+ * @param {string} leaderboardContext. Leaderboard context, 'general' by default. Available values : `"none"`, `"general"`, `"noMods"`, `"noPause"`, `"golf"`, `"sCPM"`, `"speedrun"`, `"speedrunBackup"`
  * @returns {Promise} Returns a promise with profile data on a specific user
  */
 async function get(id, stats = true, keepOriginalId = false, leaderboardContext = "general") {

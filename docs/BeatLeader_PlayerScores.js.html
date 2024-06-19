@@ -18,12 +18,12 @@ const {parseSearchOptions} = require('./utility/parseSearchOptions')
  * | Parameter           | Type                 | Description                           | Valid Values                                                                                       |
  * |---------------------|----------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------|
  * | sortBy              | ScoresSortBy         | (Optional) Sorting criteria           | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
- * | order               | Order                | Sorting order                         | `"asc"`, `"desc"`                                                                                       |
+ * | order               | Order                | (Optional) Sorting order              | `"asc"`, `"desc"`                                                                                       |
  * | page                | number               | (Optional) Page number                | N/A                                                                                                 |
  * | count               | number               | (Optional) Number of items per page   | N/A                                                                                                 |
  * | search              | string               | (Optional) Search query               | N/A                                                                                                 |
  * | diff                | string               | (Optional) Difficulty level           | `"Easy"`, `"Normal"`, `"Hard"`, `"Expert"`, `"ExpertPlus"`                                                     |
- * | mode                | string               | Mode of item                          | `"Standard"`, `"OneSaber"`, `"90Degree"`, `"360Degree"`                                                                                                |
+ * | mode                | string               | (Optional) Mode of item               | `"Standard"`, `"OneSaber"`, `"90Degree"`, `"360Degree"`                                                                                                |
  * | requirements        | Requirements         | (Optional) Requirements               | N/A                                                                                                 |
  * | scoreStatus         | ScoreFilterStatus    | (Optional) Score status               | N/A                                                                                                 |
  * | leaderboardContext  | LeaderboardContests  | (Optional) Context of the leaderboard | N/A                                                                                               |
@@ -64,12 +64,12 @@ async function getById(id, scoresSearchOptions = {}) {
  * | Parameter           | Type                 | Description                           | Valid Values                                                                                       |
  * |---------------------|----------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------|
  * | sortBy              | ScoresSortBy         | (Optional) Sorting criteria           | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `"date"`, `"pp"`, `"acc"`, `"pauses"`, `"rank"`, `"maxStreak"`, `"mistakes"`, `"weight"`, `"weightedPp"` |
- * | order               | Order                | Sorting order                         | `"asc"`, `"desc"`                                                                                       |
+ * | order               | Order                | (Optional) Sorting order              | `"asc"`, `"desc"`                                                                                       |
  * | page                | number               | (Optional) Page number                | N/A                                                                                                 |
  * | count               | number               | (Optional) Number of items per page   | N/A                                                                                                 |
  * | search              | string               | (Optional) Search query               | N/A                                                                                                 |
  * | diff                | string               | (Optional) Difficulty level           | `"Easy"`, `"Normal"`, `"Hard"`, `"Expert"`, `"ExpertPlus"`                                                     |
- * | mode                | string               | Mode of item                          | `"Standard"`, `"OneSaber"`, `"90Degree"`, `"360Degree"`                                                                                                |
+ * | mode                | string               | (Optional) Mode of item               | `"Standard"`, `"OneSaber"`, `"90Degree"`, `"360Degree"`                                                                                                |
  * | requirements        | Requirements         | (Optional) Requirements               | N/A                                                                                                 |
  * | scoreStatus         | ScoreFilterStatus    | (Optional) Score status               | N/A                                                                                                 |
  * | leaderboardContext  | LeaderboardContests  | (Optional) Context of the leaderboard | N/A                                                                                               |
