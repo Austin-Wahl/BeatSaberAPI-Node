@@ -5,10 +5,6 @@ Currently in development. BeatSaberAPI-Node is a Open Source Library that allows
 - ScoreSaber
 - BeatLeader
 
-## Planned Support 
-- AccSaber
-- Challenge Saber
-
 # Installing
 Run the following command
 ```bash
