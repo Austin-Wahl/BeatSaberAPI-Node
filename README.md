@@ -1,5 +1,5 @@
 # BeatSaberAPI-Node
-Currently in development. BeatSaberAPI-Node is a Open Source Library that allows for easy interaction with different BeatSaber API's through a well documented Node.JS library.
+BeatSaberAPI-Node is an Open Source Library that allows for easy interaction with different BeatSaber API's through a well documented Node.JS library.
 
 ## Supported API's
 - ScoreSaber
